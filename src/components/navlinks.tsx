@@ -2,6 +2,7 @@ import { ICategory } from "@/types/catagory";
 import Link from "next/link";
 
 const Navlink = async () => {
+    
   const res = await fetch(
     "https://news-api-v2.vercel.app/api/categories"
   );
