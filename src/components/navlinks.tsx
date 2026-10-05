@@ -30,7 +30,7 @@ const Navlink = async () => {
         {filterNavs.map((nav) => (
           <li key={nav.slug}>
             <Link
-              href={nav.slug}
+              href={`/catagory/${nav.slug}`}
               className="block border-b-2 border-transparent px-3 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-red-700 hover:text-red-700"
             >
               {nav.title}

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const NewscardOther = ({ news }: { news:IMainNews }) => {
-    console.log(news);
+    // console.log(news);
     return (
         <div className="p-10">
 

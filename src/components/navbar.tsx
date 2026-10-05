@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import Navlink from "./navlinks";
+import Link from "next/link";
+import UserInfo from "@/app/LSButton/UserInfo";
 
 const Navbar = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -36,19 +38,7 @@ const Navbar = () => {
 
           {/* Auth */}
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-            <button
-              type="button"
-              className="px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-red-700 sm:px-4"
-            >
-              সাইন ইন
-            </button>
-
-            <button
-              type="button"
-              className="bg-red-700 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-red-800 sm:px-4"
-            >
-              সাইন আপ
-            </button>
+          <UserInfo />
           </div>
         </div>
       </div>
