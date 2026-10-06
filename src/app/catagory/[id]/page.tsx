@@ -1,8 +1,15 @@
 import NotFound from "@/app/not-found";
 import NewscardOther from "@/components/newscardOther";
+import { IMainNews } from "@/types/mainnews";
 import React from "react";
 
-const CatagoryID = async ({ params }) => {
+interface Props {
+  params: Promise<{
+    id: string;
+  }>;
+}
+
+const CatagoryID = async ({ params }: Props) => {
   const { id } = await params;
 
   const res = await fetch(
@@ -18,14 +25,12 @@ const CatagoryID = async ({ params }) => {
 
   return (
     <div className="container mx-auto px-4 py-6 md:px-6 lg:px-8">
-      {/* Title */}
       <h1 className="mb-5 border-b-2 border-red-700 pb-2 text-2xl font-bold text-gray-800 md:text-3xl">
         {data.title || id}
       </h1>
 
-      {/* News Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-        {category.map((news) => (
+        {category.map((news: IMainNews) => (
           <NewscardOther key={news.id} news={news} />
         ))}
       </div>

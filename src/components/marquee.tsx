@@ -1,6 +1,5 @@
-
-import { ICategory } from "@/types/catagory";
-import MarqueeText from "react-marquee-text"
+import { IMainNews } from "@/types/mainnews";
+import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 
 const Marquee = async () => {
@@ -9,27 +8,29 @@ const Marquee = async () => {
   );
 
   const data = await res.json();
-  const hedline:ICategory[] = data.data;
-
-  console.log(data);
+  const headlines: IMainNews[] = data.data;
 
   return (
     <div className="bg-red-600 text-white">
-        <div className="flex container mx-auto">
-                  <div className=" bg-red-800 py-1 font-bold">সর্বশেষ</div>
-        <MarqueeText 
-        className="py-1"
-        direction="right" duration={10} pauseOnHover>
-      {hedline.map((item) => (
-        <span key={item.id}>
-          <span>
-            {item.title} <span className="mx-5">•</span>
-          </span>
-        </span>
-      ))}
-      </MarqueeText>
+      <div className="container mx-auto flex">
+        <div className="bg-red-800 px-3 py-1 font-bold">
+          সর্বশেষ
         </div>
-  
+
+        <MarqueeText
+          className="py-1"
+          direction="right"
+          duration={10}
+          pauseOnHover
+        >
+          {headlines.map((item) => (
+            <span key={item.id}>
+              {item.title}
+              <span className="mx-5">•</span>
+            </span>
+          ))}
+        </MarqueeText>
+      </div>
     </div>
   );
 };

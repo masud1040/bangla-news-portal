@@ -1,14 +1,20 @@
 export interface IMainNews {
-  id: string
-  title: string
-  description: string
-  link: string
-  imageUrl: string
-  imageAlt: string
-  category: string
-  type: string
-  isLive: boolean
-  firstPublished: string
-  lastPublished: string
-  source: string
+  id: string;
+  title: string;
+  description: string;
+  link: string;
+  imageUrl: string;
+  imageAlt: string;
+  category: string;
+  type: string;
+  isLive: boolean;
+  firstPublished: string;
+  lastPublished: string;
+  source: string;
+}
+
+export interface INewsSection {
+  curationId: string;
+  title: string;
+  articles: IMainNews[];
 }
