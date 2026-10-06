@@ -10,12 +10,15 @@ const Navbar = () => {
   });
 
   return (
-    <header className="border-b border-gray-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
       {/* Top Header */}
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex min-h-[78px] items-center justify-between gap-4">
           {/* Logo & Brand */}
-          <div className="flex min-w-0 items-center gap-3">
+         <Link href="/">
+          <div
+           
+           className="flex min-w-0 items-center gap-3">
             <Image
               src="/logo.webp"
               alt="Bangla News 24"
@@ -35,6 +38,7 @@ const Navbar = () => {
               </p>
             </div>
           </div>
+         </Link>
 
           {/* Auth */}
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">

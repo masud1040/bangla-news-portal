@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Navlink from "./navlinks";
 
 const Footer = () => {
   return (
@@ -19,41 +20,11 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="mb-3 font-semibold text-gray-800">
-              গুরুত্বপূর্ণ লিংক
-            </h3>
-
-            <div className="flex flex-col gap-2 text-sm">
-              <Link
-                href="/"
-                className="text-gray-600 hover:text-red-700"
-              >
-                হোম
-              </Link>
-
-              <Link
-                href="/politics"
-                className="text-gray-600 hover:text-red-700"
-              >
-                রাজনীতি
-              </Link>
-
-              <Link
-                href="/world"
-                className="text-gray-600 hover:text-red-700"
-              >
-                বিশ্ব
-              </Link>
-
-              <Link
-                href="/sports"
-                className="text-gray-600 hover:text-red-700"
-              >
-                খেলা
-              </Link>
-            </div>
-          </div>
+          {
+            <div className="grid gap-8 md:grid-cols-3">
+              <Navlink></Navlink>
+              </div>
+          }
 
           {/* Contact */}
           <div>
